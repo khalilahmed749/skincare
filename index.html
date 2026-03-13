@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KP Skincare | Glow Naturally</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@400;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e5b4a4",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1f1613",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Poppins', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    :root {
+        --ios-ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --ios-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s var(--ios-ease), transform 0.8s var(--ios-ease);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered children animation */
+    .reveal-group > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s var(--ios-ease), transform 0.6s var(--ios-ease);
+    }
+
+    .reveal-group.active > * {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .reveal-group.active > *:nth-child(2) { transition-delay: 0.1s; }
+    .reveal-group.active > *:nth-child(3) { transition-delay: 0.2s; }
+    .reveal-group.active > *:nth-child(4) { transition-delay: 0.3s; }
+
+    /* Spring/Tactile Hover Effects */
+    button, .group {
+        transition: transform 0.4s var(--ios-spring) !important;
+    }
+    
+    button:active, .group:active {
+        transform: scale(0.96);
+    }
+
+    /* iOS Photos Style Image Hover */
+    .group:hover img {
+        transform: scale(1.05);
+        transition: transform 0.6s var(--ios-ease);
+    }
+
+    /* Header Blur Transition */
+    nav.scrolled {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(229, 180, 164, 0.3);
+    }
+</style></head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 glass border-b border-primary/10 transition-all duration-500">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">spa</span>
+<span class="font-display text-2xl font-bold tracking-tight">KP</span>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Skin Quiz</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Ingredients</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-[10px] text-white rounded-full w-4 h-4 flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-12 pb-24 lg:pt-20 reveal">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-background-light to-transparent -z-10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-12 items-center reveal-group">
+<div class="space-y-8 reveal-group">
+<div class="space-y-4 reveal-group">
+<h1 class="font-display text-6xl lg:text-8xl leading-tight text-slate-900">Glow <br/><span class="text-primary italic font-normal">Naturally</span></h1>
+<p class="text-lg text-slate-600 max-w-md leading-relaxed">Premium skincare products crafted with botanical extracts for a healthy, radiant complexion that lasts.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary text-white font-semibold rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all flex items-center justify-center gap-2 group">
+                            Shop Now
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="px-8 py-4 border-2 border-primary/20 hover:bg-primary/10 font-semibold rounded-full transition-all">
+                            View Routine
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative aspect-square rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+<img alt="Premium skincare serum bottle in minimalist setting" class="w-full h-full object-cover" data-alt="Minimalist luxury skincare serum bottle setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXFvhyTB4_xX0k--FdzM_S1NYXVJQHGBl3q_trivEZEv-DT6wj47rFu_nq7NlwJnmv1O1yfIH5I0UzcxMcfP85X4Z_KP5FkQPw6QnrCVhed8x74V8A6irw5K5j0KVqaBLBfVGqEyuomMr5ldkXjw24ltQxLbuo40XLDDxA-YrkhwviESCYqg-_N2rZmXJO_okKMa49aHx534t8QlrbYiiHVhuSFMxSYS7Da5OeIv_rO1sjktuiPCfoHJROl-x8FIINCYFXk6fZpg0"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-24 bg-white reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-12">
+<div class="space-y-2">
+<h2 class="font-display text-4xl font-bold">Best Sellers</h2>
+<p class="text-slate-500">The essentials loved by our community</p>
+</div>
+<button class="text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                    View All <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal-group">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-background-light transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Radiance Serum bottle" class="w-full h-full object-cover transition-transform" data-alt="Radiance boost serum in glass bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBumH3cUL9B-jAPK0emDWEHzxgAIBakK7vIWctiyir8EdvFbFr0h7bBwzRt1fZPX2odqiXTrSGsoL51bdaAccWw-rnItCPrYg_HDY3DiBugAl3bkRLRNZajTfmlwkjnHbFOX6vFf8ubZOq7hq44nhW95x2zs7h7UPvLunaSDTEyecF6XPOnKPfdPIVs6pG0CYilVRgYc-cKFsDzamBUX_33P4QznINRhmzdoDYzHx9ppzsb54tlRfI7TofwGp30e8_Fc6KgGh20o0M"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur py-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity font-medium">Quick Add</button>
+</div>
+<h3 class="font-display text-xl font-semibold">Radiance Serum</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 text-sm">Brightening &amp; Repair</p>
+<p class="font-bold text-primary">$48.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-background-light transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Hydrating Mist spray" class="w-full h-full object-cover transition-transform" data-alt="Refreshing facial mist spray bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7DFNWZS3z2J-V3kJTMb1e7vaP2y9y7PCWaCoyrRMUNYa9e0x_mLThJoebAx53gqXvGWS0CU5N1y6rf7drl8yTDzOGmmeRb3PAmEvXyMN7Hqq1AsD2u4MXXyBVvIPs2NWRWjTdIVh9hIIoc32arcFpolsY35iE3gbWrgQNkXGk070k2IysMH7B-82XufssOmr0sj2T8yMqyKW0cYW_NIoeaPQ9YEPME483jh8UINt5MYlUL6b1rAEbWl3jL1a26arO2v1AwgpycDY"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur py-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity font-medium">Quick Add</button>
+</div>
+<h3 class="font-display text-xl font-semibold">Hydrating Mist</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 text-sm">Rose &amp; Hyaluronic</p>
+<p class="font-bold text-primary">$32.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-background-light transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Gentle Cleanser bottle" class="w-full h-full object-cover transition-transform" data-alt="Gentle cream cleanser minimalist bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuaO9D7HwUYRl1XxDi1jyGpI7NrwkciP964RxVOots-f4QtK9NJph2xwbpguLuaCFq5YHxjo3z5_q1_KM1_V_wJQxx-js577gT51MYK2qrCUraZuzrRzNyiUbhOep7SFQuqqDau8vwi_NFObnzZ7IwUd_VEjgK2UzuRv2HK14YW7aMaoBESrv_-8PwwAnE7c0IzR6KowFOIFMadaNeaQGUVyUtVolw-tf2zk3pT3XvWzBLy55jDLTHLmKkhlFyRkbUEoCHMgpf9aQ"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur py-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity font-medium">Quick Add</button>
+</div>
+<h3 class="font-display text-xl font-semibold">Gentle Cleanser</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 text-sm">pH Balanced</p>
+<p class="font-bold text-primary">$28.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-background-light transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Night Repair Cream jar" class="w-full h-full object-cover transition-transform" data-alt="Night recovery cream in premium jar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKa6TzGiHXNYFr72HQ7kgyIdQQBRi4Wx3C8mW_8bJa8dwpjVMAWFysJAXHeCDDEObgdnZkytaXZHX_oL9rakDnVzlJq_pu5uZFYF6H8wsUT0uHUR8MSnmUmk2TIX-apXH98AE78JQ7JixxZz3KVtntzXmirg0LH85bc1ZLMVts64ZNSqWI6ffZtfpr6PthOcEvd-b1QRR4egSgjQivgW-Z65bzJDjpGbntgjZCTNMxaHd9tQbdO4Co-2lmC2GKRg_QfJDTV7g2tzA"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur py-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity font-medium">Quick Add</button>
+</div>
+<h3 class="font-display text-xl font-semibold">Night Repair</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 text-sm">Overnight Recovery</p>
+<p class="font-bold text-primary">$54.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skin Types -->
+<section class="py-24 bg-background-light reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4 reveal-group">
+<h2 class="font-display text-4xl font-bold">Shop by Skin Type</h2>
+<p class="text-slate-600">Personalized care for your unique needs</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 reveal-group">
+<div class="bg-white p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">water_drop</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Dry Skin</h4>
+<p class="text-sm text-slate-500 mb-6 leading-relaxed">Deep hydration for thirsty skin cells.</p>
+<a class="text-primary font-bold text-sm tracking-wider uppercase" href="#">Explore</a>
+</div>
+<div class="bg-white p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">opacity</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Oily Skin</h4>
+<p class="text-sm text-slate-500 mb-6 leading-relaxed">Balance oil and minimize appearance of pores.</p>
+<a class="text-primary font-bold text-sm tracking-wider uppercase" href="#">Explore</a>
+</div>
+<div class="bg-white p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">favorite</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Sensitive</h4>
+<p class="text-sm text-slate-500 mb-6 leading-relaxed">Soothing formulas for delicate complexions.</p>
+<a class="text-primary font-bold text-sm tracking-wider uppercase" href="#">Explore</a>
+</div>
+<div class="bg-white p-8 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">waves</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Combination</h4>
+<p class="text-sm text-slate-500 mb-6 leading-relaxed">The best of both worlds for balanced skin.</p>
+<a class="text-primary font-bold text-sm tracking-wider uppercase" href="#">Explore</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Ingredients -->
+<section class="py-24 bg-white border-y border-primary/5 reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center reveal-group">
+<div class="space-y-8 reveal-group">
+<h2 class="font-display text-4xl font-bold">The Power of <br/><span class="text-primary">Clean Ingredients</span></h2>
+<div class="space-y-6 reveal-group">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg shrink-0 h-fit">eco</span>
+<div>
+<h5 class="font-bold text-lg">Botanical Extracts</h5>
+<p class="text-slate-500">Pure plant-based ingredients sourced from organic farms around the world.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg shrink-0 h-fit">science</span>
+<div>
+<h5 class="font-bold text-lg">Scientifically Proven</h5>
+<p class="text-slate-500">Formulated by dermatologists to deliver effective, visible results.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg shrink-0 h-fit">inventory_2</span>
+<div>
+<h5 class="font-bold text-lg">Sustainable Packaging</h5>
+<p class="text-slate-500">100% recyclable glass bottles and FSC-certified paper packaging.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 reveal-group">
+<div class="aspect-square rounded-2xl bg-primary/5 overflow-hidden">
+<img alt="Rosemary sprig" class="w-full h-full object-cover" data-alt="Fresh botanical ingredients close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8WuZOdYM3XjKX1bl2kFtsurR8ZMB5L4MK9IBgNMUj9b_sGlRufxqlolNC-FNfcwitORX1_iIddU0IK7zRX_CC1JdHa1ObCbULH_bo540BVTUPZLhns28ouIAawwyPiYIIGKMn3ygx8GZIo0GMM5xum7KFUr5iEVGf4RYkgF5ZknMEePvKcEJehVhNKoa7w2YnTu1jBab2jj5DCHdeIQxYd3FXRW8TglyCqMEorsB0tGNzOdQk-a7NbAweVXpsHv_859SxncgUQk"/>
+</div>
+<div class="aspect-square rounded-2xl bg-primary/5 overflow-hidden translate-y-8">
+<img alt="Aloe Vera plant" class="w-full h-full object-cover" data-alt="Aloe vera slice showing inner gel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBX9Zmf6Y97P-5P-UUYM68683S10yQGec7OYV1psfev4PU81Md_kNCIPXsN3yA7YpJTSy_kSn7fLXUnlnaI0lEviqwR3QlPfGEajf8o-4bzPL7ksRp1MTdaqFq08iv5plVjDeOHaVQYUpzTNFrn2R_sNPIw9zXmY7NXU-4pCudMRUImPtLsk1QeoS9XtwUER6fDHfn2bVoCKov9Kfrq2rTp2fcPqhql-44o0TQXWiFJ0pMSh_Ac86PGz88b0GGr9m6ya-BCguxRAo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-24 bg-background-light overflow-hidden reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold">Skin Stories</h2>
+<div class="flex justify-center mt-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<span class="ml-2 font-medium">4.9/5 from 2,000+ reviews</span>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8 reveal-group">
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/5">
+<div class="flex text-yellow-400 mb-4 scale-75 origin-left">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"The Hydrating Mist is a game changer for my dry skin. I use it throughout the day for a quick refresh."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SC</div>
+<div>
+<p class="font-bold text-sm">Sarah Chen</p>
+<p class="text-xs text-slate-400">Verified Buyer</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/5">
+<div class="flex text-yellow-400 mb-4 scale-75 origin-left">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"Finally found a cleanser that doesn't leave my skin feeling tight. My face feels so soft and clean."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MW</div>
+<div>
+<p class="font-bold text-sm">Marcus Wong</p>
+<p class="text-xs text-slate-400">Verified Buyer</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/5">
+<div class="flex text-yellow-400 mb-4 scale-75 origin-left">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"The Radiance Serum has cleared up my dark spots in just three weeks. Absolutely worth every penny!"</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">EB</div>
+<div>
+<p class="font-bold text-sm">Elena Brooks</p>
+<p class="text-xs text-slate-400">Verified Buyer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-24 bg-white reveal">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/5 py-16 rounded-3xl border border-primary/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">mail</span>
+<h2 class="font-display text-4xl font-bold mb-4">Join the Glow Club</h2>
+<p class="text-slate-600 mb-10 max-w-md mx-auto">Get expert skincare tips and 15% off your first order when you subscribe.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-1 px-6 py-4 rounded-full border-none ring-1 ring-primary/20 focus:ring-2 focus:ring-primary outline-none text-slate-900 bg-white" placeholder="Email address" type="email"/>
+<button class="px-8 py-4 bg-primary text-white font-bold rounded-full hover:brightness-105 transition-all" type="submit">Subscribe</button>
+</form>
+<p class="mt-6 text-xs text-slate-400">By subscribing, you agree to our Terms of Service and Privacy Policy.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16 reveal-group">
+<div class="col-span-2">
+<div class="flex items-center gap-2 text-white mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">spa</span>
+<span class="font-display text-2xl font-bold tracking-tight">KP</span>
+</div>
+<p class="max-w-xs text-slate-400 mb-8">Elevating your daily ritual with high-performance, botanical skincare that respects your skin and the planet.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="https://www.instagram.com/khalil_ahmed7861/">
+<span class="material-symbols-outlined text-xl">
+<i class="fa-brands fa-instagram"></i> </span>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="https://www.linkedin.com/in/khalil-ahmed-297557367/">
+<span class="material-symbols-outlined text-xl"><i class="fa-brands fa-linkedin"></i></span>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="./index.html">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-bold text-white mb-6">Shop</h6>
+<ul class="space-y-4 text-sm reveal-group">
+<li><a class="hover:text-primary" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary" href="#">Best Sellers</a></li>
+<li><a class="hover:text-primary" href="#">Skincare Sets</a></li>
+<li><a class="hover:text-primary" href="#">Gifts</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-white mb-6">Learn</h6>
+<ul class="space-y-4 text-sm reveal-group">
+<li><a class="hover:text-primary" href="#">Our Story</a></li>
+<li><a class="hover:text-primary" href="#">Ingredients Glossary</a></li>
+<li><a class="hover:text-primary" href="#">Skin Quiz</a></li>
+<li><a class="hover:text-primary" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-white mb-6">Support</h6>
+<ul class="space-y-4 text-sm reveal-group">
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+<li><a class="hover:text-primary" href="#">Track Order</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+<p>© 2024 KP Skincare. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+<a class="hover:text-white" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Intersection Observer for fade-in/up animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-group').forEach(el => observer.observe(el));
+
+        // Header scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    });
+</script></body></html>
